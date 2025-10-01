@@ -11,16 +11,16 @@
 	<title>@yield('html-title')</title>
 
 	{{--<link rel="stylesheet" href="stylesheet" href="http://fonts.googleapis.com/css?family=Arimo:400,700,400italic">--}}
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/fonts/linecons/css/linecons.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/fonts/fontawesome/css/font-awesome.min.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/bootstrap.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/xenon-core.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/xenon-forms.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/xenon-components.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/xenon-skins.css')}}" />
-	<link rel="stylesheet" href="{{URL::asset('xenon/css/custom.css')}}">
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/fonts/linecons/css/linecons.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/fonts/fontawesome/css/font-awesome.min.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/bootstrap.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/xenon-core.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/xenon-forms.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/xenon-components.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/xenon-skins.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('xenon/css/custom.css')}}">
 
-  <script src="{{URL::asset('xenon/js/jquery-1.11.1.min.js')}}"></script>
+  <script src="{{secure_asset('xenon/js/jquery-1.11.1.min.js')}}"></script>
 
 
 
@@ -30,7 +30,7 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	
-	<link rel="stylesheet" href="{{URL::asset('css/app.css')}}" />
+	<link rel="stylesheet" href="{{secure_asset('css/app.css')}}" />
 
 	@yield('header')
 </head>
@@ -174,18 +174,18 @@
 	</div>
 
 	<!-- Bottom Scripts -->
-	<script src="{{URL::asset('xenon/js/bootstrap.min.js')}}"></script>
-	<script src="{{URL::asset('xenon/js/TweenMax.min.js')}}"></script>
-	<script src="{{URL::asset('xenon/js/resizeable.js')}}"></script>
-	<script src="{{URL::asset('xenon/js/joinable.js')}}"></script>
-	<script src="{{URL::asset('xenon/js/xenon-api.js')}}"></script>
-	<script src="{{URL::asset('xenon/js/xenon-toggles.js')}}"></script>
-	<script src="{{URL::asset('xenon/js/moment.min.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/bootstrap.min.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/TweenMax.min.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/resizeable.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/joinable.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/xenon-api.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/xenon-toggles.js')}}"></script>
+	<script src="{{secure_asset('xenon/js/moment.min.js')}}"></script>
 	
 	@yield('plugins')
 
 	<!-- JavaScripts initializations and stuff -->
-	<script src="{{URL::asset('/xenon/js/xenon-custom.js')}}"></script>
+	<script src="{{secure_asset('/xenon/js/xenon-custom.js')}}"></script>
 
     <script>
         (function() {

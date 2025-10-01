@@ -1,7 +1,7 @@
 @extends('menu')
 @section('header')
-    <link href="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{URL::asset('adminlte/plugins/select2/select2.min.css')}}">
+    <link href="{{secure_asset('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{secure_asset('adminlte/plugins/select2/select2.min.css')}}">
 @endsection
 
 @section('body')
@@ -87,10 +87,10 @@
 
 @endsection
 @section('plugins')
-<script src="{{URL::asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-<script src="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{URL::asset('adminlte/plugins/select2/select2.full.min.js')}}"></script>	
-<script src="{{URL::asset('js/dataTables.fixedColumns.min.js')}}"></script> 
+<script src="{{secure_asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
+<script src="{{secure_asset('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{secure_asset('adminlte/plugins/select2/select2.full.min.js')}}"></script>	
+<script src="{{secure_asset('js/dataTables.fixedColumns.min.js')}}"></script> 
 
 @endsection
 

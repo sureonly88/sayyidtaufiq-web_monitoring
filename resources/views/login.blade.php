@@ -5,9 +5,9 @@
     <title>PEDAMI-MONITORING</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="{{URL::asset('adminlte/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{secure_asset('adminlte/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{URL::asset('adminlte/dist/css/AdminLTElogin.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{secure_asset('adminlte/dist/css/AdminLTElogin.min.css')}}" rel="stylesheet" type="text/css" />
     <style>
         form, .errors-container {
             max-width: 400px;
@@ -19,7 +19,7 @@
     <div class="login-box gradient">
       <div class="login-box-body ">
 	      <div class="login-logo">
-          <img src="{{URL::asset('image/logo.png')}}" alt="PEDAMI" style="width: 30%; display:block; margin:auto" />
+          <img src="{{secure_asset('image/logo.png')}}" alt="PEDAMI" style="width: 30%; display:block; margin:auto" />
           <h2 class="title text-center">KOPKAR PEDAMI</h2>
         </div><!-- /.login-logo -->
         <form name="login-form"  class="login-form" method="post">
@@ -51,9 +51,9 @@
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
   <!-- jQuery 2.1.4 -->
-    <script src="{{URL::asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+    <script src="{{secure_asset('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="{{URL::asset('bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{secure_asset('bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <script>
       
     </script>
