@@ -10,7 +10,7 @@ services:
       APP_ENV: ${APP_ENV}
       APP_DEBUG: ${APP_DEBUG}
       APP_KEY: ${APP_KEY}
-      APP_URL: http://${APP_DOMAIN}
+      APP_URL: https://${APP_DOMAIN}
       DB_CONNECTION: mysql
       DB_HOST: mariadb
       DB_PORT: "3306"
@@ -32,8 +32,25 @@ services:
     volumes:
       - app-storage:/var/www/html/storage
       - ./:/var/www/html:ro
-    ports:
-      - "8733:80"
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+
+      - "traefik.docker.network=dokploy-network"
+      - "traefik.http.services.monitoring-svc.loadbalancer.server.port=80"
+
+      - "traefik.http.routers.monitoring-http.rule=Host(`monitoring.paymentpedami.com`)"
+      - "traefik.http.routers.monitoring-http.entrypoints=web"
+      - "traefik.http.middlewares.monitoring-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.monitoring-http.middlewares=monitoring-redirect"
+      - "traefik.http.routers.monitoring-http.service=monitoring-svc"
+
+      - "traefik.http.routers.monitoring-https.rule=Host(`monitoring.paymentpedami.com`)"
+      - "traefik.http.routers.monitoring-https.entrypoints=websecure"
+      - "traefik.http.routers.monitoring-https.tls=true"
+      - "traefik.http.routers.monitoring-https.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.monitoring-https.service=monitoring-svc"
 
 volumes:
   app-storage:
