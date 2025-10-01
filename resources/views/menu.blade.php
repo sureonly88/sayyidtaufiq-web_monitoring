@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <title>PEDAMI-MONITORING</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <link href="{{secure_asset('adminlte/dist/css/skins/_all-skins.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{secure_asset('adminlte/plugins/iCheck/all.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{secure_asset('adminlte/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/dist/css/skins/_all-skins.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/plugins/iCheck/all.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <link href="{{secure_asset('adminlte/dist/css/AdminLTE.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{secure_asset('adminlte/dist/css/skins/_all-skins.min.css')}}" rel="stylesheet" type="text/css" />	
+    <link href="{{URL::asset('adminlte/dist/css/AdminLTE.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/dist/css/skins/_all-skins.min.css')}}" rel="stylesheet" type="text/css" />	
     @yield('header')
   </head>
   <body class="skin-blue sidebar-mini fixed">
@@ -89,7 +89,7 @@
       <!-- =============================================== -->
 
       <!-- Content Wrapper. Contains page content -->
-      <div style="background:url({{secure_asset('image/0.png')}})repeat;" class="content-wrapper">
+      <div style="background:url({{URL::asset('image/0.png')}})repeat;" class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section  class="content-header">
           <h1> Monitoring Transaksi
@@ -119,16 +119,16 @@
       <div class='control-sidebar-bg'></div>
     </div><!-- ./wrapper -->
 
-    <script src="{{secure_asset('adminlte/plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
+    <script src="{{URL::asset('adminlte/plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="{{secure_asset('adminlte/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
+    <script src="{{URL::asset('adminlte/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
     <!-- FastClick -->
-    <script src="{{secure_asset('adminlte/plugins/fastclick/fastclick.min.js')}}'"></script>
+    <script src="{{URL::asset('adminlte/plugins/fastclick/fastclick.min.js')}}'"></script>
     <!-- AdminLTE App -->
-    <script src="{{secure_asset('adminlte/dist/js/app.min.js')}}" type="text/javascript"></script>
+    <script src="{{URL::asset('adminlte/dist/js/app.min.js')}}" type="text/javascript"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{secure_asset('adminlte/dist/js/demo.js')}}" type="text/javascript"></script>
-    <script src="{{secure_asset('adminlte/plugins/daterangepicker/moment.min.js')}}"></script>
+    <script src="{{URL::asset('adminlte/dist/js/demo.js')}}" type="text/javascript"></script>
+    <script src="{{URL::asset('adminlte/plugins/daterangepicker/moment.min.js')}}"></script>
     <!-- Page script -->
     @yield('plugins')
     <script></script>	

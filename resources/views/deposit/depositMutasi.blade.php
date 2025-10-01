@@ -1,7 +1,7 @@
 @extends('menu')
 @section('header')
-    <link href="{{secure_asset('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{secure_asset('adminlte/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('body')
@@ -70,9 +70,9 @@
 
 @endsection
 @section('plugins')
-<script src="{{secure_asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-<script src="{{secure_asset('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>	
-<script src="{{secure_asset('adminlte/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>	
+<script src="{{URL::asset('adminlte/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
 
 @endsection
 

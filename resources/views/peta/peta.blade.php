@@ -170,7 +170,7 @@ function addYourLocationButton(map)
     secondChild.style.margin = '5px';
     secondChild.style.width = '18px';
     secondChild.style.height = '18px';
-    secondChild.style.backgroundImage = "url({{secure_asset('image/mylocation-sprite-1x.png')}})";
+    secondChild.style.backgroundImage = "url({{URL::asset('image/mylocation-sprite-1x.png')}})";
     secondChild.style.backgroundSize = '180px 18px';
     secondChild.style.backgroundPosition = '0px 0px';
     secondChild.style.backgroundRepeat = 'no-repeat';
