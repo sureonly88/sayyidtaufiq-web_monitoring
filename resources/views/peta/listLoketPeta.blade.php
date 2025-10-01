@@ -1,7 +1,7 @@
 @extends('menu')
 @section('header')
-    <link href="{{secure_url('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{secure_url('adminlte/plugins/select2/select2.min.css')}}">
+    <link href="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{URL::asset('adminlte/plugins/select2/select2.min.css')}}">
 @endsection
 @section('modal')
 <div class="modal fade" id="modalPeta">
@@ -114,9 +114,9 @@
 @endsection
 
 @section('plugins')
-<script src="{{secure_url('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-<script src="{{secure_url('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{secure_url('adminlte/plugins/select2/select2.full.min.js')}}"></script>
+<script src="{{URL::asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('adminlte/plugins/select2/select2.full.min.js')}}"></script>
 @endsection
 
 @section('footer')

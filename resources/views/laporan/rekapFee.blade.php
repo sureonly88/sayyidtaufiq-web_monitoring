@@ -1,6 +1,6 @@
 @extends('menu')
 @section('header')
-    <link href="{{secure_url('adminlte/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('body')
@@ -40,7 +40,7 @@
 
 @endsection
 @section('plugins')
-<script src="{{secure_url('adminlte/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('adminlte/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
 
 @endsection
 

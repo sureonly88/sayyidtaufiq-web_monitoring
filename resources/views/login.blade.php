@@ -5,9 +5,9 @@
     <title>PEDAMI-MONITORING</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
-    <link href="{{secure_url('adminlte/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{secure_url('adminlte/dist/css/AdminLTElogin.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{URL::asset('adminlte/dist/css/AdminLTElogin.min.css')}}" rel="stylesheet" type="text/css" />
     <style>
         form, .errors-container {
             max-width: 400px;
@@ -19,7 +19,7 @@
     <div class="login-box gradient">
       <div class="login-box-body ">
 	      <div class="login-logo">
-          <img src="{{secure_url('image/logo.png')}}" alt="PEDAMI" style="width: 30%; display:block; margin:auto" />
+          <img src="{{URL::asset('image/logo.png')}}" alt="PEDAMI" style="width: 30%; display:block; margin:auto" />
           <h2 class="title text-center">KOPKAR PEDAMI</h2>
         </div><!-- /.login-logo -->
         <form name="login-form"  class="login-form" method="post">
