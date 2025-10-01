@@ -10,7 +10,7 @@ services:
       APP_ENV: ${APP_ENV}
       APP_DEBUG: ${APP_DEBUG}
       APP_KEY: ${APP_KEY}
-      APP_URL: https://${APP_DOMAIN}
+      APP_URL: http://${APP_DOMAIN}
       DB_CONNECTION: mysql
       DB_HOST: mariadb
       DB_PORT: "3306"
