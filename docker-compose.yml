@@ -5,7 +5,6 @@ services:
       dockerfile: Dockerfile
     restart: always
     networks:
-      - dokploy-monitoring
       - dokploy-network
     environment:
       APP_ENV: ${APP_ENV}
@@ -29,7 +28,7 @@ services:
     depends_on:
       - php
     networks:
-      - dokploy-monitoring
+      - dokploy-network
     volumes:
       - app-storage:/var/www/html/storage
       - ./:/var/www/html:ro
@@ -37,8 +36,8 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
-      - "traefik.active=true" 
-      - "traefik.docker.network=dokploy-monitoring"
+
+      - "traefik.docker.network=dokploy-network"
       - "traefik.http.services.monitoring-svc.loadbalancer.server.port=80"
 
       - "traefik.http.routers.monitoring-http.rule=Host(`monitoring.paymentpedami.com`)"
@@ -57,7 +56,5 @@ volumes:
   app-storage:
 
 networks:
-  dokploy-monitoring:
-    external: true
   dokploy-network:
     external: true
