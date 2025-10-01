@@ -51,11 +51,6 @@
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
-  <!-- jQuery 2.1.4 -->
-    <script src="{{secure_url('plugins/jQuery/jQuery-2.1.4.min.js')}}"></script>
-    <!-- Bootstrap 3.3.2 JS -->
-    <script src="{{secure_url('bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>
-    <script>
       
     </script>
   </body>
