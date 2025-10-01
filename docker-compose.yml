@@ -32,13 +32,8 @@ services:
     volumes:
       - app-storage:/var/www/html/storage
       - ./:/var/www/html:ro
-    expose:
-      - "80"
-    labels:
-      - "traefik.enable=true"
-      # Router HTTP (langsung tanpa redirect)
-      - "traefik.http.routers.app.entrypoints=web"
-      - "traefik.http.routers.app.rule=Host(`monitoring.paymentpedami.com`)"
+    ports:
+      - "8733:80" 
 
 volumes:
   app-storage:
