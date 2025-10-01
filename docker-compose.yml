@@ -1,0 +1,69 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - dokploy-network
+    environment:
+      APP_ENV: ${APP_ENV}
+      APP_DEBUG: ${APP_DEBUG}
+      APP_KEY: ${APP_KEY}
+      APP_URL: https://${APP_DOMAIN}
+      DB_CONNECTION: mysql
+      DB_HOST: mariadb
+      DB_PORT: "3306"
+      DB_DATABASE: ${DB_DATABASE}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - app-storage:/var/www/html/storage
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    restart: always
+    depends_on:
+      - php
+    networks:
+      - dokploy-network
+    volumes:
+      - app-storage:/var/www/html/storage
+      - ./:/var/www/html:ro
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      # Redirect HTTP -> HTTPS
+      - "traefik.http.routers.app.entrypoints=web"
+      - "traefik.http.routers.app.rule=Host(`monitor.paymentpedami.com`)"
+      - "traefik.http.middlewares.app-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.app.middlewares=app-https-redirect"
+
+      # Router HTTPS
+      - "traefik.http.routers.app-https.entrypoints=websecure"
+      - "traefik.http.routers.app-https.rule=Host(`monitor.paymentpedami.com`)"
+      - "traefik.http.routers.app-https.tls=true"
+      - "traefik.http.routers.app-https.tls.certresolver=letsencrypt"
+
+      # Security headers (HSTS, XSS, MIME)
+      - "traefik.http.middlewares.sec-headers.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.sec-headers.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.sec-headers.headers.stsPreload=true"
+      - "traefik.http.middlewares.sec-headers.headers.contentTypeNosniff=true"
+      - "traefik.http.middlewares.sec-headers.headers.browserXssFilter=true"
+      - "traefik.http.middlewares.sec-headers.headers.frameDeny=true"
+      - "traefik.http.routers.app-https.middlewares=sec-headers"
+
+      - "traefik.http.middlewares.app-ratelimit.ratelimit.average=100"
+      - "traefik.http.middlewares.app-ratelimit.ratelimit.burst=200"
+      - "traefik.http.routers.app-https.middlewares=sec-headers,app-ratelimit"
+
+volumes:
+  app-storage:
+
+networks:
+  dokploy-network:
+    external: true
