@@ -48,6 +48,9 @@ services:
       - "traefik.http.routers.app-https.tls=true"
       - "traefik.http.routers.app-https.tls.certresolver=letsencrypt"
 
+      - "traefik.docker.network=dokploy-network"
+      - "traefik.http.services.app.loadbalancer.server.port=80"
+
 volumes:
   app-storage:
 
