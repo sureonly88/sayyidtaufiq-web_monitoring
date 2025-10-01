@@ -36,21 +36,19 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
-      # Router HTTP (hanya untuk redirect ke HTTPS)
-      - "traefik.http.routers.app-monitor.entrypoints=web"
-      - "traefik.http.routers.app-monitor.rule=Host(`monitoring.paymentpedami.com`)"
-      - "traefik.http.middlewares.app-monitor-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.app-monitor.middlewares=app-https-redirect"
-
-      # Router HTTPS (server utama)
-      - "traefik.http.routers.app-monitor-https.entrypoints=websecure"
-      - "traefik.http.routers.app-monitor-https.rule=Host(`monitoring.paymentpedami.com`)"
-      - "traefik.http.routers.app-monitor-https.tls=true"
-      - "traefik.http.routers.app-monitor-https.tls.certresolver=letsencrypt"
-
       - "traefik.docker.network=dokploy-network"
-      - "traefik.http.services.app-monitor.loadbalancer.server.port=80"
-      - "traefik.http.routers.app-monitor-https.service=app-monitor"
+      - "traefik.http.services.monitoring-svc.loadbalancer.server.port=80"
+
+      - "traefik.http.routers.monitoring-http.rule=Host(`monitoring.paymentpedami.com`)"
+      - "traefik.http.routers.monitoring-http.entrypoints=web"
+      - "traefik.http.middlewares.monitoring-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.monitoring-http.middlewares=monitoring-redirect"
+
+      - "traefik.http.routers.monitoring-https.rule=Host(`monitoring.paymentpedami.com`)"
+      - "traefik.http.routers.monitoring-https.entrypoints=websecure"
+      - "traefik.http.routers.monitoring-https.tls=true"
+      - "traefik.http.routers.monitoring-https.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.monitoring-https.service=monitoring-svc"
 
 volumes:
   app-storage:
