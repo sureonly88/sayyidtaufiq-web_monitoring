@@ -23,6 +23,7 @@
           <h2 class="title text-center">KOPKAR PEDAMI</h2>
         </div><!-- /.login-logo -->
         <form name="login-form"  class="login-form" method="post">
+           {{ csrf_field() }}
           <div class="form-group has-feedback">
             <input type="text" name="login" class="form-control" placeholder="Username" required autofocus/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
