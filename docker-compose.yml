@@ -37,7 +37,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=dokploy-network"
-      - "traefik.http.services.monitoring-svc.loadbalancer.server.port=80"
+      - "traefik.http.services.monitoring-svc.loadbalancer.server.port=8081"
 
       - "traefik.http.routers.monitoring-http.rule=Host(`monitoring.paymentpedami.com`)"
       - "traefik.http.routers.monitoring-http.entrypoints=web"
