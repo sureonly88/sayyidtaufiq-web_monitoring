@@ -33,7 +33,7 @@ services:
       - app-storage:/var/www/html/storage
       - ./:/var/www/html:ro
     expose:
-      - "80"
+      - "8733"
     labels:
       - "traefik.enable=true"
       # Router HTTP (langsung tanpa redirect)
