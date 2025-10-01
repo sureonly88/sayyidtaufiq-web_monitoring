@@ -32,8 +32,8 @@ services:
     volumes:
       - app-storage:/var/www/html/storage
       - ./:/var/www/html:ro
-    ports:
-      - "80:80"
+    expose:
+      - "80"
     labels:
       - "traefik.enable=true"
       # Router HTTP (langsung tanpa redirect)
