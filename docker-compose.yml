@@ -10,7 +10,7 @@ services:
       APP_ENV: ${APP_ENV}
       APP_DEBUG: ${APP_DEBUG}
       APP_KEY: ${APP_KEY}
-      APP_URL: http://${APP_DOMAIN}
+      APP_URL: https://${APP_DOMAIN}
       DB_CONNECTION: mysql
       DB_HOST: mariadb
       DB_PORT: "3306"
@@ -33,12 +33,20 @@ services:
       - app-storage:/var/www/html/storage
       - ./:/var/www/html:ro
     expose:
-      - "8733"
+      - "80"
     labels:
       - "traefik.enable=true"
-      # Router HTTP (langsung tanpa redirect)
+      # Router HTTP (hanya untuk redirect ke HTTPS)
       - "traefik.http.routers.app.entrypoints=web"
       - "traefik.http.routers.app.rule=Host(`monitoring.paymentpedami.com`)"
+      - "traefik.http.middlewares.app-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.app.middlewares=app-https-redirect"
+
+      # Router HTTPS (server utama)
+      - "traefik.http.routers.app-https.entrypoints=websecure"
+      - "traefik.http.routers.app-https.rule=Host(`monitoring.paymentpedami.com`)"
+      - "traefik.http.routers.app-https.tls=true"
+      - "traefik.http.routers.app-https.tls.certresolver=letsencrypt"
 
 volumes:
   app-storage:

@@ -1,8 +1,8 @@
 @extends('menu')
 @section('header')
-    <link href="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{URL::asset('adminlte/plugins/select2/select2.min.css')}}">
-    <link rel="stylesheet" href="{{URL::asset('adminlte/plugins/daterangepicker/daterangepicker-bs3.css')}}">
+    <link href="{{secure_url('adminlte/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{secure_url('adminlte/plugins/select2/select2.min.css')}}">
+    <link rel="stylesheet" href="{{secure_url('adminlte/plugins/daterangepicker/daterangepicker-bs3.css')}}">
 @endsection
 
 @section('body')
@@ -169,11 +169,11 @@
 
 @endsection
 @section('plugins')
-<script src="{{URL::asset('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
-<script src="{{URL::asset('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
-<script src="{{URL::asset('adminlte/plugins/select2/select2.full.min.js')}}"></script>	
-<script src="{{URL::asset('adminlte/plugins/slimScroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
-<script src="{{URL::asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{secure_url('adminlte/plugins/datatables/jquery.dataTables.min.js')}}" type="text/javascript"></script>
+<script src="{{secure_url('adminlte/plugins/datatables/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{secure_url('adminlte/plugins/select2/select2.full.min.js')}}"></script>	
+<script src="{{secure_url('adminlte/plugins/slimScroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
+<script src="{{secure_url('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 
 @endsection
 
