@@ -6,6 +6,7 @@ services:
     restart: always
     networks:
       - dokploy-monitoring
+      - dokploy-network
     environment:
       APP_ENV: ${APP_ENV}
       APP_DEBUG: ${APP_DEBUG}
@@ -36,6 +37,7 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
+      - "traefik.active=true" 
       - "traefik.docker.network=dokploy-monitoring"
       - "traefik.http.services.monitoring-svc.loadbalancer.server.port=80"
 
@@ -56,4 +58,6 @@ volumes:
 
 networks:
   dokploy-monitoring:
+    external: true
+  dokploy-network:
     external: true
